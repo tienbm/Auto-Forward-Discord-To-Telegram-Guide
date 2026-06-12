@@ -29,6 +29,6 @@ This screen provides system settings and options to manage the bot's configurati
 
 ***
 
-#### **Use Case:**
+#### **Use Case**
 
 This menu is designed to provide full control over bot functionality and quick access to support and updates, ensuring seamless operations and troubleshooting when needed. Let me know if you need further explanations!
