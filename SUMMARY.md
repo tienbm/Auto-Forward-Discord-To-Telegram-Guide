@@ -15,6 +15,7 @@
   * [Add Header / Footer](fundamentals/how-to-settings-for-task/add-header-footer.md)
 * [💬 Setup Topics For Task](fundamentals/setup-topics-for-task.md)
 * [💻 System Settings](fundamentals/system-settings.md)
+* [Auto Send Discord Messages to Another Channel With a Bot](fundamentals/auto-send-discord-messages-to-anther-channel-with-bot.md)
 * [✅ Whitelist: Create And Management](fundamentals/whitelist-create-and-management.md)
 * [🔴 Blacklist: Create And Management](fundamentals/blacklist-create-and-management.md)
 * [🌀 Replace : Create And Management](fundamentals/replace-create-and-management.md)
