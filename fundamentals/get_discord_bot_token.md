@@ -24,6 +24,17 @@ Reset the token when the copy button disappears from the Bot page. Discord hides
 
 ## How Do I Get a Bot Token Step by Step?
 
+<!-- [IMAGE_PLACEHOLDER]
+Type: annotated_screenshot
+Location: Discord Developer Portal → Applications → [App Name] → Bot page
+What to capture: Full browser window showing the Bot page with the Token section visible, including the "Reset Token" button
+Annotations needed: Red rectangle around the Token section, arrow pointing to "Reset Token" button, label "Step 3" in yellow box
+Alt text: Discord Developer Portal Bot page showing the Token section with the Reset Token button highlighted
+Figcaption: The Discord Developer Portal Bot page where users can reset and copy the bot token. The Reset Token button generates a new credential after identity verification.
+Dimensions: 1200x800px
+Priority: high
+-->
+
 Navigate to discord.com/developers/applications and sign in with the Discord account that owns the application. Click the application that owns the bot. Create a new application if none exists. Click Bot in the left sidebar. Scroll to the Token area. Click Reset Token if the copy button is not visible. Confirm the reset action in the pop-up window. Complete the identity verification step. Discord requires password prompts, MFA codes, or passkeys depending on account security settings. Copy the new token immediately after Discord displays the token. Paste the token into the target system. Store the token in a secure location such as a password manager or cloud secret manager. Update the token in all environments including code, .env files, CI secrets, hosting platforms, and third-party integrations. Restart the bot or redeploy the service. Discord only exposes regenerated tokens once. The pre-flight checklist ensures correct application selection, existing bot user, available verification method, and prepared safe storage.
 
 ***
@@ -35,6 +46,17 @@ Discord requires identity verification before revealing regenerated tokens. The 
 ***
 
 ## Where Should the Token Be Stored?
+
+<!-- [IMAGE_PLACEHOLDER]
+Type: annotated_screenshot
+Location: D2T Auto Forward web dashboard → Settings → Bot Connections → Add Discord Bot
+What to capture: The Bot Connections page showing the "Add Discord Bot" button and the token input field
+Annotations needed: Red rectangle around the token input field, arrow pointing to "Add Discord Bot" button, label "Step 2" in yellow box
+Alt text: D2T Auto Forward Bot Connections page showing the Add Discord Bot form with token input field
+Figcaption: The D2T Auto Forward Bot Connections form. Users paste the Discord bot token into the input field and click Add Discord Bot to authenticate the connection.
+Dimensions: 1200x700px
+Priority: medium
+-->
 
 Store tokens in a .env file used by bot code. Add the .env file to .gitignore to prevent public exposure. Use cloud secret managers such as Vercel, Railway, Render, AWS Secrets Manager, or Google Cloud Secret Manager. Enter the token in the bot connection form inside the D2T Auto Forward web dashboard at discordtotelegram.com. Use a secure local password manager during deployment preparation. Never store tokens in public GitHub repositories. Never store tokens in screenshots or screen recordings. Never store tokens in chat messages or email. Never store tokens in unencrypted text files on shared drives. Cloud secret managers prevent token leakage effectively. The D2T Auto Forward dashboard encrypts tokens at rest and in transit. Token exposure in public repositories leads to immediate bot compromise.
 

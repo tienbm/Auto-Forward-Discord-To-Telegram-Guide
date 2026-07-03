@@ -26,6 +26,17 @@ Prefer a video walkthrough? See the [RedFox Official YouTube channel](https://ww
 
 ## How Do I Add a Discord Bot Step by Step?
 
+<!-- [IMAGE_PLACEHOLDER]
+Type: annotated_screenshot
+Location: Discord Developer Portal → Applications → [App Name] → OAuth2 → URL Generator
+What to capture: Full browser window showing the URL Generator with the "bot" scope checkbox selected and Bot Permissions area visible
+Annotations needed: Numbered callout "1" on the "bot" scope checkbox, "2" on Bot Permissions section, "3" on the generated URL copy button
+Alt text: Discord Developer Portal OAuth2 URL Generator showing bot scope selection and permission configuration
+Figcaption: Generating the Discord bot invite URL in the Developer Portal. Users select the bot scope, choose required permissions, and copy the generated URL.
+Dimensions: 1200x900px
+Priority: high
+-->
+
 Adding a Discord bot to a server requires six specific steps in the Discord Developer Portal. Navigate to discord.com/developers/applications, create or open an application, generate a bot user, configure OAuth2 scopes, select permissions, and authorize the bot through the generated URL. This process works for D2T Auto Forward and any custom bot. Incorrect scope selection or missing permissions are the most common causes of bot installation failure. The OAuth2 URL Generator provides a standardized interface for creating valid invite links that Discord accepts.
 
 Follow this sequence to invite a bot into a server:
@@ -79,6 +90,17 @@ Follow this sequence to invite a bot into a server:
 
 ## Which OAuth2 Scopes and Permissions Should Be Selected?
 
+<!-- [IMAGE_PLACEHOLDER]
+Type: annotated_screenshot
+Location: Discord Developer Portal → OAuth2 → URL Generator → Bot Permissions section
+What to capture: The Bot Permissions grid showing checked boxes for View Channel, Send Messages, Read Message History, Embed Links, and Attach Files
+Annotations needed: Green checkmarks on required permissions, red X on Administrator, label "Avoid" near Administrator checkbox
+Alt text: Discord Developer Portal Bot Permissions grid showing required permissions checked for a forwarding bot
+Figcaption: Required Discord bot permissions for D2T Auto Forward. The bot needs View Channel, Read Message History in the source server, and Send Messages, Embed Links, Attach Files in the destination server.
+Dimensions: 1200x800px
+Priority: medium
+-->
+
 Select the bot scope for all Discord bots that need to read or post messages in servers. The applications.commands scope enables slash commands, which Discord introduced in 2021. For D2T Auto Forward, the bot scope combined with View Channel, Send Messages, Read Message History, Embed Links, and Attach Files provides complete forwarding functionality. Bots with granular permissions experience fewer security incidents than those granted Administrator access. Discord's permission system includes 32 distinct permissions that control specific actions within servers.
 
 **Recommended permission set for forwarding bots:**
@@ -125,6 +147,17 @@ Use the Developer Portal at discord.com/developers/applications for custom bots,
 ***
 
 ## How Do I Confirm the Bot Was Added Correctly?
+
+<!-- [IMAGE_PLACEHOLDER]
+Type: annotated_screenshot
+Location: Discord server → Server Settings → Integrations → Bots and Apps
+What to capture: The Integrations page showing the bot listed under "Bots and Apps" with its icon and name visible
+Annotations needed: Red rectangle around the bot entry in the list, arrow pointing to bot name, label "Verified" in green box
+Alt text: Discord server Integrations page showing the added bot listed under Bots and Apps
+Figcaption: Verifying the bot installation in Discord server settings. The bot appears in Server Settings > Integrations > Bots and Apps when added correctly.
+Dimensions: 1200x700px
+Priority: medium
+-->
 
 Verify the bot installation in three places: the member list, the integrations page, and through a test action. Confirm the bot appears in the server member list, check Server Settings > Integrations > Bots and Apps to verify the bot is listed, and send one test message in a channel the bot should access. Successful bot installations typically pass all three verification checks within minutes. If the bot appears in the member list and integrations page but does not respond, check channel-level permissions next. Discord's integration dashboard provides real-time status updates for all connected applications.
 

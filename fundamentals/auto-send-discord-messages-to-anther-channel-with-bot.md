@@ -31,6 +31,17 @@ Prefer a video walkthrough? See the [RedFox Official YouTube channel](https://ww
 
 ## How Do I Set Up Bot-Based Forwarding?
 
+<!-- [IMAGE_PLACEHOLDER]
+Type: annotated_screenshot
+Location: D2T Auto Forward web dashboard → Tasks → Add New Task → Discord (source) → Discord (destination)
+What to capture: Full browser window showing the task creation form with Source = Discord, Destination = Discord, and the connected bot dropdown visible
+Annotations needed: Numbered callouts "1" on Source dropdown, "2" on Destination dropdown, "3" on bot selection dropdown
+Alt text: D2T Auto Forward dashboard showing the Add New Task form for Discord-to-Discord forwarding with platform and bot selections
+Figcaption: Creating a Discord-to-Discord automation task in the D2T Auto Forward dashboard. Users select Discord for both source and destination, then choose the connected bot from the dropdown.
+Dimensions: 1200x900px
+Priority: high
+-->
+
 Setting up bot-based forwarding requires connecting a Discord bot to the D2T Auto Forward dashboard at discordtotelegram.com, adding the bot to both source and destination servers, and creating an automation task. The entire process takes under five minutes. The bot token authenticates the connection between the dashboard and Discord API. OAuth2 scopes define the permissions the bot requests when invited to a server. The dashboard manages the automation logic, channel selection, and task activation. Users must obtain a bot token from the Discord Developer Portal before connecting it to the system. The bot must be invited to both the source server and the destination server with the correct permissions. Once connected, the dashboard allows users to create tasks that specify which channels forward messages to which destinations. The system validates the connection before activating the task. Follow the sequence below to build the first automation task.
 
 **Step 1: Open the dashboard**
@@ -74,6 +85,17 @@ Setting up bot-based forwarding requires connecting a Discord bot to the D2T Aut
 
 ## Which Discord Permissions Does the Bot Need?
 
+<!-- [IMAGE_PLACEHOLDER]
+Type: diagram / infographic
+Location: N/A (create in Figma, Canva, or similar)
+What to capture: A clean comparison table showing five Discord bot permissions across two columns: Source Server and Destination Server, with checkmarks indicating which are required where
+Annotations needed: Green checkmarks for required permissions, brief one-line description per permission, header labels "Source Server" and "Destination Server"
+Alt text: Discord channel permissions table showing required bot permissions for forwarding: View Channel, Read Message History, Send Messages, Embed Links, Attach Files
+Figcaption: Required Discord bot permissions for D2T Auto Forward. The bot needs View Channel and Read Message History in the source server, plus Send Messages, Embed Links, and Attach Files in the destination server.
+Dimensions: 1200x600px
+Priority: medium
+-->
+
 The bot requires specific permissions in both source and destination channels to function correctly. Missing permissions are the most common cause of setup failures. The bot needs View Channel and Read Message History in the source server to access messages. The destination server requires Send Messages, Embed Links, and Attach Files to post forwarded content with formatting and media. Discord's permission hierarchy allows server-wide roles to be overridden by channel-specific denies. This means one channel can work while another fails in the same server. Always check channel-level permissions if the bot works in some channels but not others. Permissions are granted through the bot role in server settings or through the OAuth2 scope when inviting the bot. The bot does not require administrator privileges. Users should grant only the necessary permissions to maintain security. Verify permissions in both server roles and individual channel overrides.
 
 | Permission | Location | Purpose |
@@ -94,6 +116,17 @@ The bot requires specific permissions in both source and destination channels to
 ***
 
 ## How Do I Troubleshoot Bot Forwarding Failures?
+
+<!-- [IMAGE_PLACEHOLDER]
+Type: annotated_screenshot
+Location: D2T Auto Forward web dashboard → Tasks → Task detail page (error state)
+What to capture: The task detail page showing a red error banner at the top with an error message like "Bot token invalid" or "Missing permissions"
+Annotations needed: Red rectangle around the error banner, arrow pointing to the "Re-enter Token" or "Check Permissions" button
+Alt text: D2T Auto Forward dashboard showing a task error banner indicating a bot token or permissions issue
+Figcaption: Common error state in the D2T Auto Forward dashboard. Users can identify the issue from the error banner and follow the suggested fix, such as re-entering the token or checking permissions.
+Dimensions: 1200x500px (cropped to show the error banner and task details)
+Priority: medium
+-->
 
 Diagnose bot forwarding failures by checking server membership, source permissions, destination permissions, media settings, and token validity in that order. Most failures stem from missing View Channel or Read Message History permissions. The bot must be a member of both servers containing the source and destination channels. Source channels require the bot to have View Channel and Read Message History enabled. Destination channels need Send Messages, Embed Links, and Attach Files permissions. Invalid or regenerated bot tokens cause authentication errors. Re-enter the token in the dashboard after regenerating it in the Discord Developer Portal. Channel-specific permission overrides can block the bot even when server-wide permissions appear correct. Check both role permissions and channel overrides in Discord server settings. The dashboard displays error indicators when tasks fail to activate.
 
